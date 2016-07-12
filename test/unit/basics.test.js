@@ -41,8 +41,8 @@ class View extends trip.View {
   render() {
     this.events.push(this.id + ':render');
   }
-  update() {
-    this.events.push(this.id + ':update');
+  update(key, value) {
+    this.events.push(this.id + ':update:' + key + ':' + value);
   }
   simulateClick() {
     this.emit('click');
@@ -82,11 +82,11 @@ describe('MVC', () => {
       // and view updates are triggered
       ctrl.model.on('change', (k, v) => {
         assert.equal(k, 'a');
-        assert.equal(v, 1);
+        assert.equal(v, 7);
       });
-      ctrl.simulateModelChange('a', 1);
-      assert.deepEqual(ctrl.v1.events, ['1:render', '1:update']);
-      assert.deepEqual(ctrl.v2.events, ['2:render', '2:update']);
+      ctrl.simulateModelChange('a', 7);
+      assert.deepEqual(ctrl.v1.events, ['1:render', '1:update:a:7']);
+      assert.deepEqual(ctrl.v2.events, ['2:render', '2:update:a:7']);
 
       // Simulate a user interaction - triggers controller
       assert.deepEqual(ctrl.clicks, []);
