@@ -3,7 +3,7 @@
 const chai = require('chai');
 const assert = chai.assert;
 
-const trip = require('../..');
+const trip = require('../../src');
 const joi = trip.joi;
 const JoiModel = trip.JoiModel;
 

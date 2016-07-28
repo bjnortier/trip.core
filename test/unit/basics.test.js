@@ -3,7 +3,7 @@
 const chai = require('chai');
 const assert = chai.assert;
 
-const trip = require('../..');
+const trip = require('../../src');
 
 // ----- Basic MVC -----
 
