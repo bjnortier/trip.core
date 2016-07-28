@@ -1,6 +1,6 @@
 {
   "name": "trip.core",
-  "version": "0.6.1",
+  "version": "0.6.3",
   "description": "Trip core",
   "main": "lib/index.js",
   "engines": {
@@ -28,7 +28,6 @@
   "devDependencies": {
     "babel-register": "^6.11.6",
     "chai": "^3.5.0",
-    "eslint-config-xo": "^0.15.3",
     "gulp": "^3.9.1",
     "gulp-eslint": "^3.0.1",
     "gulp-mocha": "^2.2.0"
