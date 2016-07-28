@@ -15,8 +15,8 @@ class JoiModel extends Model {
     if (schema._type !== 'object') {
       throw new Error('schema must have object type at root');
     }
-    var error;
-    if (error = joi.validate(struct, schema).error) {
+    var error = joi.validate(struct, schema).error;
+    if (error) {
       throw new Error(error);
     }
 
@@ -31,7 +31,8 @@ class JoiModel extends Model {
         set: function(value) {
           var potentialNewStruct = cloneDeep(struct);
           potentialNewStruct[key] = value;
-          if (error = joi.validate(potentialNewStruct, schema).error) {
+          var error = joi.validate(potentialNewStruct, schema).error;
+          if (error) {
             throw new Error(error);
           }
 
