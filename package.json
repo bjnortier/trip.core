@@ -1,6 +1,6 @@
 {
   "name": "trip.core",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "Trip core",
   "main": "lib/index.js",
   "engines": {
